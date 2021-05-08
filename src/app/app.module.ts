@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BasicComponent } from './basic/basic.component';
+import { PdfmakeComponent } from './pdfmake/pdfmake.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BasicComponent,
+    PdfmakeComponent
   ],
   imports: [
     BrowserModule,

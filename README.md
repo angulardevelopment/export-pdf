@@ -1,3 +1,13 @@
+# About
+
+packages used-
+>npm install jspdf --save
+npm install jspdf-autotable --save
+npm install @types/jspdf --save-dev
+
+pdfMake
+
+add path of jspdf in angular.json scripts property
 # ExportPdf
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
