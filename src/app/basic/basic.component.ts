@@ -885,3 +885,61 @@ export class BasicComponent implements OnInit {
   }
 
 }
+app.component.ts
+download() {
+var doc = new jsPDF();
+doc.text(20, 20, 'Hello world!');
+doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
+doc.addPage();
+doc.text(20, 20, 'Do you like that?');
+// Save the PDF
+doc.save('Test.pdf');
+}
+
+Example-
+
+var randomName = faker.name.findName(); // Caitlyn Kerluke
+var randomEmail = faker.internet.email(); // Rusty@arne.info
+var randomCard = faker.helpers.createCard();
+var sentence = faker.lorem.words(20);
+country: faker.address.country(),
+city: faker.address.city(),
+expenses: faker.finance.amount(),
+text2: faker.lorem.words(1)
+var str = faker.helpers.shuffle(words).join(' ').trim();
+
+var examples = {};
+
+Default - shows what a default table looks like
+examples.auto = function () {
+var doc = new jsPDF();
+doc.autoTable(["a","b","c"], getData);
+// return doc;
+doc.save();
+// };
+
+function getData(rowCount) {
+rowCount = rowCount || 4;
+//var sentence = "Minima quis totam nobis nihil et molestiae architecto accusantium qui necessitatibus sit ducimus cupiditate qui ullam et aspernatur esse et dolores ut voluptatem odit quasi ea sit ad sint voluptatem est dignissimos voluptatem vel adipisci facere consequuntur et reprehenderit cum unde debitis ab cumque sint quo ut officiis rerum aut quia quia expedita ut consectetur animiqui voluptas suscipit Monsequatur";
+var sentence = faker.lorem.words(20);
+var data = [];
+for (var j = 1; j <= rowCount; j++) {
+data.push({
+id: j,
+name: faker.name.findName(),
+email: faker.internet.email(),
+country: faker.address.country(),
+city: faker.address.city(),
+expenses: faker.finance.amount(),
+text: shuffleSentence(sentence),
+text2: faker.lorem.words(1)
+});
+}
+return data;
+}
+function shuffleSentence(words) {
+if (typeof words === 'string') return words;
+words = words || faker.lorem.words(8);
+var str = faker.helpers.shuffle(words).join(' ').trim();
+return str.charAt(0).toUpperCase() + str.slice(1);
+}
