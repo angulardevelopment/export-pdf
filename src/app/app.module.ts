@@ -14,7 +14,8 @@ import { PdfmakeComponent } from './pdfmake/pdfmake.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
